@@ -15,10 +15,13 @@ public class Lista {
     }
 
     public void adiciona(Tarefa tarefa) {
-        for(Tarefa tar_contida : tarefas){
-            int id_contido = tar_contida.getId();
-            if(tarefa.getId() != id_contido){
-                tarefas.add(tarefa);
+        if(tarefas.isEmpty()){
+            tarefas.add(tarefa);
+        }else {
+            for (Tarefa tar_contida : tarefas) {
+                if (tarefa.getId() != tar_contida.getId()) {
+                    tarefas.add(tarefa);
+                }
             }
         }
     }
